@@ -1,0 +1,20 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Tailwind & ShadCn
+
+I'm using tailwind 4 for styling and shadcn for the components.
+
+Before you create a component, check shadcn for that component. Look in the @src/components folder
+
+# Bun
+
+I'm using bun for a package manager - don't use npm or pnpm for install commands
+
+# General
+
+If you do not know the answer to something - ask the developer
+Focus on readablity when coding
+Implement DRY principle (Don't repeat yourself) but not when it comes at a cost of readability

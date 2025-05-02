@@ -1,0 +1,14 @@
+---
+description: 
+globs: **/*.ts,**/*.tsx
+alwaysApply: false
+---
+# Typescript rules
+
+Keep functions small and reuse code already in use
+
+# React
+Split out react components into different functions, even within the same file.
+If a component would be useful for other files, create it in a separate file. Otherwise the developer will split out the component files
+Use descriptive variable and function names\
+Use consts instead of functions, for example, “const toggle = () =>”. Also, define a type if possible
