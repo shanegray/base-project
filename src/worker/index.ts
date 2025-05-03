@@ -1,6 +1,10 @@
 import { Hono } from "hono";
-const app = new Hono<{ Bindings: Env }>();
+import test from "./routes/test";
+import info from "./routes/info";
 
-app.get("/api/test-data", (c) => c.json({ name: "Cloudflare" }));
+const app = new Hono().basePath("/api");
+
+const routes = app.route("/test", test).route("/info", info);
 
 export default app;
+export type AppType = typeof routes;
