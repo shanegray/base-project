@@ -1,0 +1,11 @@
+---
+description: 
+globs: src/react-app/**/*.tsx
+alwaysApply: false
+---
+# Tanstack Router
+
+This application uses tanstack router with file routing
+
+The [routeTree.gen.ts](mdc:src/react-app/routeTree.gen.ts) file will be automatically updated using `bun run dev`
+It's also checked into source code
