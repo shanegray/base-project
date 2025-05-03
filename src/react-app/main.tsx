@@ -8,6 +8,7 @@ import {
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Spinner } from "@/components/spinner";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ClerkProvider } from "@clerk/clerk-react";
 
 import "./index.css";
 
@@ -41,6 +42,14 @@ declare module "@tanstack/react-router" {
 	}
 }
 
+// Auth
+// Import your Publishable Key
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!PUBLISHABLE_KEY) {
+	throw new Error("Missing Auth Key");
+}
+
 // Render the app
 const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Failed to find the root element");
@@ -48,10 +57,12 @@ if (!rootElement.innerHTML) {
 	const root = ReactDOM.createRoot(rootElement);
 	root.render(
 		<StrictMode>
-			<QueryClientProvider client={queryClient}>
-				<RouterProvider router={router} />
-				<ReactQueryDevtools />
-			</QueryClientProvider>
+			<ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+				<QueryClientProvider client={queryClient}>
+					<RouterProvider router={router} />
+					<ReactQueryDevtools />
+				</QueryClientProvider>
+			</ClerkProvider>
 		</StrictMode>,
 	);
 }

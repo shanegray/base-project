@@ -14,11 +14,15 @@ function Index() {
 	const testData = testDataQuery.data;
 	const infoQuery = useQuery(infoQueryOptions());
 
+	const i = import.meta.env.VITE_SOMETHING;
+
 	return (
 		<div className="p-2">
+			<div>env: {i}</div>
 			<div>Call from Test: {testData.name}</div>
 			<div>Call from Info: {JSON.stringify(infoQuery.data)}</div>
 			<Button onClick={() => infoQuery.refetch()}>Call for information</Button>
+			<Button onClick={() => fetch("/api/ping")}>Ping</Button>
 		</div>
 	);
 }

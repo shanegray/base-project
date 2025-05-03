@@ -2,7 +2,7 @@ import { queryOptions } from "@tanstack/react-query";
 import { hc } from "hono/client";
 import type { AppType } from "../../worker";
 
-const client = hc<AppType>("http://localhost:5173");
+const client = hc<AppType>("");
 
 async function fetchTestData() {
   console.log("fetching test data");
