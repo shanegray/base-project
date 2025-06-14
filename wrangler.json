@@ -12,10 +12,7 @@
 		"enabled": true
 	},
 	"upload_source_maps": true,
-	"assets": {
-		"not_found_handling": "single-page-application"
-	},
-
+	"keep_vars": true
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
@@ -33,11 +30,10 @@
 	 * Environment Variables
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 	 */
-	"vars": {
-		"CLERK_SECRET_KEY": "sk_test_bOjZuoaQYk0R9TRQ5siFbVCG12B7hq44LedO9laHKh",
-		"CLERK_PUBLISHABLE_KEY": "pk_test_c3BlY2lhbC1ncm91cGVyLTIyLmNsZXJrLmFjY291bnRzLmRldiQ",
-		"VITE_CLERK_PUBLISHABLE_KEY": "pk_test_c3BlY2lhbC1ncm91cGVyLTIyLmNsZXJrLmFjY291bnRzLmRldiQ"
-	}
+
+	// All variables have been moved to secrets in Cloudflare Dashboard
+	// vars section removed to prevent deployment conflicts
+
 	/**
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/

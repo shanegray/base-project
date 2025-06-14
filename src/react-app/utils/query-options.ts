@@ -1,17 +1,17 @@
 import { queryOptions } from "@tanstack/react-query";
 import { hc } from "hono/client";
-import type { AppType } from "../../worker";
+import type { RouteType } from "../../worker";
 
-const client = hc<AppType>("");
+const client = hc<RouteType>("");
 
 async function fetchTestData() {
   console.log("fetching test data");
-  const res = await client.api.test.$get();
+  const res = await client.api.sample.$get();
   return res.json();
 }
 
 async function fetchInfo() {
-  const res = await client.api.info.$get();
+  const res = await client.api.sample.$get();
   return res.json();
 }
 

@@ -47,7 +47,7 @@ declare module "@tanstack/react-router" {
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 if (!PUBLISHABLE_KEY) {
-	throw new Error("Missing Auth Key");
+	throw new Error("Missing Auth Key - needed to run CLERK");
 }
 
 // Render the app
