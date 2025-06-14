@@ -19,7 +19,7 @@ function Index() {
 	return (
 		<div className="p-2">
 			<div>env: {i}</div>
-			<div>Call from Test: {testData.name}</div>
+			<div>Call from Test: {testData.message}</div>
 			<div>Call from Info: {JSON.stringify(infoQuery.data)}</div>
 			<Button onClick={() => infoQuery.refetch()}>Call for information</Button>
 			<Button onClick={() => fetch("/api/ping")}>Ping</Button>
